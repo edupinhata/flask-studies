@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 
 from flask import Flask
@@ -28,5 +30,11 @@ def create_app(test_config=None):
     @app.route('/hello')
     def hello():
         return 'Hello, World!'
+
+    from . import db
+    db.init_app(app)
+
+    from . import auth
+    app.register_blueprint(auth.bp)
 
     return app

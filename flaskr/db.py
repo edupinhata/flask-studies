@@ -38,3 +38,8 @@ def init_db_command():
 def init_app(app):
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)
+
+"""
+g: is a special object that is unique for each request. It is used to store
+    data that might be accessed by multiple functions during the request.
+"""

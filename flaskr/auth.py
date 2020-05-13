@@ -93,3 +93,9 @@ def login_required(view):
         return view(**kwargs)
 
     return wrapped_view
+
+"""
+flash: You used flash() in the views to show error messages, an the
+       get_flashed_messages() will display them.
+
+"""
